@@ -109,28 +109,28 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Draft Invoices</h5>
-                    <p id="myPtag">{{ checkout }}</p>
+                    <p id="myPtag" style="color: transparent; user-select: none;">{{ checkout }}</p>
                     <a href="#" class="btn btn-primary" id="checkout">View Draft Invoices</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Sent Invoices</h5>
-                    <p id="myPtag">{{ ad }}</p>
+                    <p id="myPtag" style="color: transparent; user-select: none;">{{ ad }}</p>
                     <a href="#" class="btn btn-primary" id="adservice">View ad Invoices</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Overdue Invoices</h5>
-                    <p id="myPtag">{{ recommend }}</p>
+                    <p id="myPtag" style="color: transparent; user-select: none;">{{ recommend }}</p>
                     <a href="#" class="btn btn-primary" id="recommend">View Overdue Invoices</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Payments Collected</h5>
-                    <p id="myPtag">{{ productcatalog }}</p>
+                    <p id="myPtag" style="color: transparent; user-select: none;">{{ productcatalog }}</p>
                     <a href="#" class="btn btn-primary" id="productcatalog">View Payments</a>
                 </div>
             </div>
@@ -140,28 +140,28 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Draft Quotes</h5>
-                    <p id="myPtag">{{ carts }}</p>
+                    <p id="myPtag" style="color: transparent; user-select: none;">{{ carts }}</p>
                     <a href="#" class="btn btn-primary" id="carts">View Draft Quotes</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Approved Quotes</h5>
-                    <p id="myPtag">{{ shipping }}</p>
+                    <p id="myPtag" style="color: transparent; user-select: none;">{{ shipping }}</p>
                     <a href="#" class="btn btn-primary" id="shipping">View Approved Quotes</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Payments Collected</h5>
-                    <p id="myPtag">{{ currency }}</p>
+                    <p id="myPtag" style="color: transparent; user-select: none;">{{ currency }}</p>
                     <a href="#" class="btn btn-primary" id="currency">View Payments</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Draft Quotes</h5>
-                    <p id="myPtag">{{ payment }}</p>
+                    <p id="myPtag" style="color: transparent; user-select: none;">{{ payment }}</p>
                     <a href="#" class="btn btn-primary" id="payment">View Draft Quotes</a>
                 </div>
             </div>
@@ -239,112 +239,6 @@
                 }]
             }
         }
-    });
-
-    document.getElementById('checkout').addEventListener('click', function() {
-    fetch('http://invoiceapp.tme-csw.net:8080/checkout') // Replace with your API endpoint
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            return response.json();
-        })
-        .then(function(json) {
-            window.alert(JSON.stringify(json));
-        })
-        .catch(function(error) {
-            console.log('There has been a problem with your fetch operation: ', error.message);
-        });
-    });
-    document.getElementById('adservice').addEventListener('click', function() {
-    fetch('http://invoiceapp.tme-csw.net:8080/adservice') // Replace with your API endpoint
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            return response.json();
-        })
-        .then(function(json) {
-            window.alert(JSON.stringify(json));
-        })
-        .catch(function(error) {
-            console.log('There has been a problem with your fetch operation: ', error.message);
-        });
-    });
-    document.getElementById('recommend').addEventListener('click', function() {
-    fetch('http://10.0.3.12:8991/recommend') // Replace with your API endpoint
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            return response.json();
-        })
-        .then(function(json) {
-            window.alert(JSON.stringify(json));
-        })
-        .catch(function(error) {
-            console.log('There has been a problem with your fetch operation: ', error.message);
-        });
-    });
-    document.getElementById('productcatalog').addEventListener('click', function() {
-    fetch('http://10.0.3.15:8994/productcatalog') // Replace with your API endpoint
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            return response.json();
-        })
-        .then(function(json) {
-            window.alert(JSON.stringify(json));
-        })
-        .catch(function(error) {
-            console.log('There has been a problem with your fetch operation: ', error.message);
-        });
-    });
-    document.getElementById('carts').addEventListener('click', function() {
-    fetch('http://10.0.3.18:8997/carts') // Replace with your API endpoint
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            return response.json();
-        })
-        .then(function(json) {
-            window.alert(JSON.stringify(json));
-        })
-        .catch(function(error) {
-            console.log('There has been a problem with your fetch operation: ', error.message);
-        });
-    });
-    document.getElementById('shipping').addEventListener('click', function() {
-    fetch('http://10.0.3.16:8995/shipping') // Replace with your API endpoint
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            return response.json();
-        })
-        .then(function(json) {
-            window.alert(JSON.stringify(json));
-        })
-        .catch(function(error) {
-            console.log('There has been a problem with your fetch operation: ', error.message);
-        });
-    });
-    document.getElementById('currency').addEventListener('click', function() {
-    fetch('http://10.0.3.17:8996/currency') // Replace with your API endpoint
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("HTTP error " + response.status);
-            }
-            return response.json();
-        })
-        .then(function(json) {
-            window.alert(JSON.stringify(json));
-        })
-        .catch(function(error) {
-            console.log('There has been a problem with your fetch operation: ', error.message);
-        });
     });
     </script>
 </body>
