@@ -15,8 +15,8 @@ def checkout():
     response2 = requests.get("http://shipping.csw.lab:8995/shipping")
     response3 = requests.get("http://currency.csw.lab:8996/currency")
     response4 = requests.get("http://payment.csw.lab:8992/payment")
-    response5 = requests.get("http://emails.csw.lab:8993/emails")
-    response6 = requests.get("http://carts.csw.lab:8997/carts")
+    response5 = requests.get("http://email.csw.lab:8993/emails")
+    response6 = requests.get("http://cart.csw.lab:8997/carts")
     with open('./templates/checkout.json', 'r') as myfile:
         data = myfile.read()
     return response1.text + response2.text + response3.text + response4.text + response5.text + response6.text + data

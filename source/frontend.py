@@ -47,7 +47,7 @@ def main():
     else:
         currencyresponse= "[{Error: 'Currency endpoint is not responding!!'}]"
 
-    response = requests.get("http://carts.csw.lab:8997/carts")
+    response = requests.get("http://cart.csw.lab:8997/carts")
     if response.status_code == 200:
         cartsresponse= response.text
     else:
