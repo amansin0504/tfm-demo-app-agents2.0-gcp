@@ -29,7 +29,7 @@ def main():
     else:
         recommendresponse = "[{Error:'Recommend endpoint is not responding!!'}]"
 
-    response = requests.get("http://productcatalog.csw.lab/productcatalog")
+    response = requests.get("http://productcatalog.csw.lab:8994/productcatalog")
     if response.status_code == 200:
         productcatalogresponse= response.text
     else:
