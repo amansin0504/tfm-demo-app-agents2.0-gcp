@@ -27,8 +27,8 @@ resource "google_compute_autoscaler" "checkout-autoscaler" {
   target                    = google_compute_instance_group_manager.checkout-manager.self_link
   zone                      = var.zone
   autoscaling_policy {
-    min_replicas            = 1
-    max_replicas            = 1
+    min_replicas            = 2
+    max_replicas            = 2
     cpu_utilization {
       target                = 0.7
     }

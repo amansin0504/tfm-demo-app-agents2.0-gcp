@@ -27,8 +27,8 @@ resource "google_compute_autoscaler" "redis-autoscaler" {
   target                    = google_compute_instance_group_manager.redis-manager.self_link
   zone                      = var.zone
   autoscaling_policy {
-    min_replicas            = 1
-    max_replicas            = 1
+    min_replicas            = 3
+    max_replicas            = 3
     cpu_utilization {
       target                = 0.7
     }

@@ -1,7 +1,7 @@
 # Update before use
 
 variable cec {
-    default = "amansin3-as-agent"
+    default = "amansin3-vmapp"
 }
 variable region {
     default = "us-east1"
