@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "recommend" {
   instance_description      = "recommend group"
   machine_type              = "e2-medium"
   can_ip_forward            = false
-  metadata_startup_script   = file("scripts/recommendation.sh")
+  metadata_startup_script   = templatefile("scripts/recommendation.sh", {downloadurl = var.cswinstaller})
 
   scheduling {
     automatic_restart       = true

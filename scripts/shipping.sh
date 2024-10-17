@@ -10,3 +10,7 @@ cp tfm-demo-app-agents2.0-gcp/source/shipping.py app/app.py
 cp tfm-demo-app-agents2.0-gcp/source/templates/shipping.json app/templates/
 cd app
 flask run  --host=0.0.0.0 -p 8995&
+
+wget -O csw-linux-installer.sh "${downloadurl}"
+chmod 755 csw-linux-installer.sh 
+sudo ./csw-linux-installer.sh

@@ -20,7 +20,7 @@ def process_payment():
         
         # Here you would include your payment processing logic.
         # For this example, we'll assume all valid amounts process successfully.
-        # curl -X POST -H "Content-Type: application/json" -d '{"amount": 100}' http://127.0.0.1:5000/payment
+        # curl -X POST -H "Content-Type: application/json" -d '{"amount": 100}' http://payment.csw.lab:8992/payment
         
         return jsonify({
             'status': 'success',

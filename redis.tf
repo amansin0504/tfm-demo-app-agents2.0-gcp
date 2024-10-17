@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "redis" {
   instance_description      = "redis group"
   machine_type              = "e2-medium"
   can_ip_forward            = false
-  metadata_startup_script   = file("scripts/redis.sh")
+  metadata_startup_script   = templatefile("scripts/redis.sh", {downloadurl = var.cswinstaller})
 
   scheduling {
     automatic_restart       = true

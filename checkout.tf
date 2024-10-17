@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "checkout" {
   instance_description      = "checkout group"
   machine_type              = "e2-medium"
   can_ip_forward            = false
-  metadata_startup_script   = file("scripts/checkout.sh")
+  metadata_startup_script   = templatefile("scripts/checkout.sh", {downloadurl = var.cswinstaller})
 
   scheduling {
     automatic_restart       = true

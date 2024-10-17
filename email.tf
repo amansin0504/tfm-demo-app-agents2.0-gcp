@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "email" {
   instance_description      = "email group"
   machine_type              = "e2-medium"
   can_ip_forward            = false
-  metadata_startup_script   = file("scripts/email.sh")
+  metadata_startup_script   = templatefile("scripts/email.sh", {downloadurl = var.cswinstaller})
 
   scheduling {
     automatic_restart       = true

@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "shipping" {
   instance_description      = "shipping group"
   machine_type              = "e2-medium"
   can_ip_forward            = false
-  metadata_startup_script   = file("scripts/shipping.sh")
+  metadata_startup_script   = templatefile("scripts/shipping.sh", {downloadurl = var.cswinstaller})
 
   scheduling {
     automatic_restart       = true

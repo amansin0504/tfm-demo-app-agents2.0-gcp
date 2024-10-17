@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "payment" {
   instance_description      = "payment group"
   machine_type              = "e2-medium"
   can_ip_forward            = false
-  metadata_startup_script   = file("scripts/payment.sh")
+  metadata_startup_script   = templatefile("scripts/payment.sh", {downloadurl = var.cswinstaller})
 
   scheduling {
     automatic_restart       = true

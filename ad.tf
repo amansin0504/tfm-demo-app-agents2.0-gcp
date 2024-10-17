@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "ad" {
   instance_description      = "ad group"
   machine_type              = "e2-medium"
   can_ip_forward            = false
-  metadata_startup_script   = file("scripts/ad.sh")
+  metadata_startup_script   = templatefile("scripts/ad.sh", {downloadurl = var.cswinstaller})
 
   scheduling {
     automatic_restart       = true

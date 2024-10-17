@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "cart" {
   instance_description      = "cart group"
   machine_type              = "e2-medium"
   can_ip_forward            = false
-  metadata_startup_script   = file("scripts/cart.sh")
+  metadata_startup_script   = templatefile("scripts/cart.sh", {downloadurl = var.cswinstaller})
 
   scheduling {
     automatic_restart       = true

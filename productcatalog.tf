@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "productcatalog" {
   instance_description      = "productcatalog group"
   machine_type              = "e2-medium"
   can_ip_forward            = false
-  metadata_startup_script   = file("scripts/productcatalog.sh")
+  metadata_startup_script   = templatefile("scripts/productcatalog.sh", {downloadurl = var.cswinstaller})
 
   scheduling {
     automatic_restart       = true
