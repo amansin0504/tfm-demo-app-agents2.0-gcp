@@ -41,7 +41,7 @@ def main():
     else:
         shippingresponse= "[{Error: 'shipping endpoint is not responding!!'}]"
 
-    response = requests.get("http://currency.csw.lab:8996/currency")
+    response = requests.get("http://currency.csw.lab:8996/get_credit_card")
     if response.status_code == 200:
         currencyresponse= response.text
     else:
