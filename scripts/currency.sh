@@ -3,6 +3,7 @@ sudo apt update
 sudo apt install python3-pip -y
 sudo apt install wget unzip
 sudo pip install Flask
+sudo pip install mysql-connector
 sudo apt install -y mysql-server
 
 git clone https://github.com/amansin0504/tfm-demo-app-agents2.0-gcp.git
@@ -14,7 +15,9 @@ flask run  --host=0.0.0.0 -p 8996&
 
 
 # Login to MySQL as root and create a dummy database and table
-sudo mysql -u root -p <<EOF
+sudo mysql <<EOF
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+FLUSH PRIVILEGES;
 CREATE DATABASE dummy_db;
 USE dummy_db;
 CREATE TABLE credit_cards (

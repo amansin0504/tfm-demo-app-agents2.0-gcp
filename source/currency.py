@@ -15,6 +15,8 @@ db_config = {
 }
 
 # Function to get credit card details for a user by user_id
+# example - curl localhost:8996/get_credit_card
+# example - curl localhost:8996/get_credit_card?user_id=10001
 def get_credit_card_details(user_id=None):
     try:
         conn = mysql.connector.connect(**db_config)
