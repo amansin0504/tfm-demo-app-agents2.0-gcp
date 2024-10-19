@@ -14,9 +14,9 @@ output "shipping-lb" {
     value = join(":",tolist([google_compute_forwarding_rule.shipping-internal-forwarding-rule.ip_address,"8995"]))
     description = "shipping Loadbalancer"
 }
-output "currency-lb" {
-    value = join(":",tolist([google_compute_forwarding_rule.currency-internal-forwarding-rule.ip_address,"8996"]))
-    description = "currency Loadbalancer"
+output "cardvault-lb" {
+    value = join(":",tolist([google_compute_forwarding_rule.cardvault-internal-forwarding-rule.ip_address,"8996"]))
+    description = "cardvault Loadbalancer"
 }
 output "payment-lb" {
     value = join(":",tolist([google_compute_forwarding_rule.payment-internal-forwarding-rule.ip_address,"8992"]))
