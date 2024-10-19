@@ -8,8 +8,8 @@ sudo apt install -y mysql-server
 
 git clone https://github.com/amansin0504/tfm-demo-app-agents2.0-gcp.git
 mkdir -p app/templates
-cp tfm-demo-app-agents2.0-gcp/source/currency.py app/app.py
-cp tfm-demo-app-agents2.0-gcp/source/templates/currency.json app/templates/
+cp tfm-demo-app-agents2.0-gcp/source/cardvault.py app/app.py
+cp tfm-demo-app-agents2.0-gcp/source/templates/cardvault.json app/templates/
 cd app
 flask run  --host=0.0.0.0 -p 8996&
 

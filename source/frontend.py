@@ -41,19 +41,19 @@ def main():
     else:
         shippingresponse= "[{Error: 'shipping endpoint is not responding!!'}]"
 
-    response = requests.get("http://currency.csw.lab:8996/get_credit_card")
+    response = requests.get("http://cardvault.csw.lab:8996/get_credit_card")
     if response.status_code == 200:
-        currencyresponse= response.text
+        cardvaultresponse= response.text
     else:
-        currencyresponse= "[{Error: 'Currency endpoint is not responding!!'}]"
+        cardvaultresponse= "[{Error: 'cardvault endpoint is not responding!!'}]"
 
     response = requests.get("http://cart.csw.lab:8997/carts")
     if response.status_code == 200:
         cartsresponse= response.text
     else:
-        cartsresponse= "[{Error: 'Currency endpoint is not responding!!'}]"
+        cartsresponse= "[{Error: 'cardvault endpoint is not responding!!'}]"
 
-    return render_template('index.html', title="page", checkout=checkoutresponse, ad=adresponse, recommend=recommendresponse, productcatalog=productcatalogresponse, shipping=shippingresponse, currency=currencyresponse, carts=cartsresponse)
+    return render_template('index.html', title="page", checkout=checkoutresponse, ad=adresponse, recommend=recommendresponse, productcatalog=productcatalogresponse, shipping=shippingresponse, cardvault=cardvaultresponse, carts=cartsresponse)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8080,debug=True)
