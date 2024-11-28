@@ -51,7 +51,7 @@ def main():
     if response.status_code == 200:
         cartsresponse= response.text
     else:
-        cartsresponse= "[{Error: 'cardvault endpoint is not responding!!'}]"
+        cartsresponse= "[{Error: 'cart endpoint is not responding!!'}]"
 
     return render_template('index.html', title="page", checkout=checkoutresponse, ad=adresponse, recommend=recommendresponse, productcatalog=productcatalogresponse, shipping=shippingresponse, cardvault=cardvaultresponse, carts=cartsresponse)
 

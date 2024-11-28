@@ -83,6 +83,10 @@ resource "google_compute_firewall" "csw-demo-firewall" {
     protocol = "tcp"
     ports    = ["80", "22", "8000-9000"]
   }
+  allow {
+    protocol = "udp"
+    ports    = ["53"]
+  }
   source_ranges = ["64.149.137.38/32","0.0.0.0/0","35.235.240.0/20"]
 }
 
