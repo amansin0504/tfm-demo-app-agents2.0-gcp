@@ -13,4 +13,5 @@ flask run  --host=0.0.0.0 -p 8990&
 
 wget -O csw-linux-installer.sh "${downloadurl}"
 chmod 755 csw-linux-installer.sh 
+sudo ./csw-linux-installer.sh
 
